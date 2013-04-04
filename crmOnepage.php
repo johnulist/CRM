@@ -110,7 +110,7 @@ class crmOnepage {
             
             try {
                 $result = $this->connection->post('/contacts.json', $contact, $headers);
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 return array(false, $e->getMessage());
             }
             
