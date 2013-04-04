@@ -1,27 +1,26 @@
 <?php
     require ('crmSalesforce.php');
     require ('crmOnepage.php');
+    require ('crmBase.php');
         
     try {
-        $client = new CRM\crmOnepage('api@studiotg.pl', 'stgapi2013');
+        $client = new CRM\crmBase('api@studiotg.pl', 'stgapi2013');
     } catch (Exception $e) {
         echo $e->getMessage();
     }
     
-    $newContact = array('StudioTgTest');
+    $newContact = array('Studio test 13', 'api@studiotg.pl', '123456789');
     
     try {
         $newContactResult = $client->addContact($newContact);
     } catch (Exception $e) {
-        echo $e->getMessage();
+        print 'Blad! '.$newContactResult[1];
     }
     
-    if(isset($newContactResult)) {
-        if($newContactResult[0]) {
-            print 'Sukces! '.$newContactResult[1];
-        } else {
-            print 'Blad! '.$newContactResult[1];
-        }
+    if(isset($newContactResult) && ($newContactResult[0] == true)) {
+        print 'Sukces! '.$newContactResult[1];
+    } else {
+        print 'Blad! '.$newContactResult[1];
     }    
     
     
