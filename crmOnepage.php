@@ -83,7 +83,6 @@ class crmOnepage {
             $crmUserId = $this->crmUser['data']['uid'];
             $crmRawBody = http_build_query($contact);
             $crmFullUrl = $this->crmUrl.'/contacts.json';
-            var_dump($crmFullUrl);
             $crmApiKey = $this->crmUser['data']['key'];
             $crmTimestamp = time();
             
@@ -98,7 +97,6 @@ class crmOnepage {
             /* 
              * Prepare headers to send to the server
              */
-            var_dump($authString);
             $headers = array(
                 '0' => 'X-OnePageCRM-UID: '.$crmUserId,
                 '1' => 'X-OnePageCRM-TS: '.$crmTimestamp,
