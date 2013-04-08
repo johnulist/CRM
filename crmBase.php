@@ -40,7 +40,7 @@ class crmBase {
         try {
             $this->crmUser = $this->connection->post('/authentication.json', $loginData);
             $this->loginSuccess = true;
-        } catch(Exception $e) {
+        } catch(\Exception $e) {
             $this->loginSuccess = false;
             echo 'Login failed! ', $e->getMessage();
         }
