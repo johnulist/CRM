@@ -13,7 +13,7 @@ require_once ('sanitize.php');
     
 class crmCapsule {
 
-    /* Define BaseCRM api server url
+    /* Define CapsuleCRM api server url
      * 
      */
     private $crmUrl;
@@ -42,7 +42,7 @@ class crmCapsule {
         
     }
     
-    /* addContact: Adding contact to BaseCRM;
+    /* addContact: Adding contact to CapsuleCRM;
      * 
      * @params array $params    array of 3:
      * $params[0]: string          contact name, required
